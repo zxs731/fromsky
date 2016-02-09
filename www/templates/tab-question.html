@@ -1,0 +1,23 @@
+
+
+<ion-view view-title="题目">
+<ion-header-bar class="bar-positive">
+<a class="button button-clear icon ion-ios-minus-outline" ng-click="flag.showDelete=!flag.showDelete;flag.showReorder=false;" ng-show="editMode" ></a>
+		<h1 class="title">心算家</h1>
+		<a class="button" ng-click="show()">...</a>
+		<a class="button" ng-show="editMode" ng-click="flag.showReorder=!flag.showReorder;flag.showDelete=false;">排序</a>
+	</ion-header-bar>
+
+	<ion-content>
+	
+		<ion-list show-delete="flag.showDelete" show-reorder="flag.showReorder" class="royal-bg">
+			<ion-item ng-repeat="item in items" >
+				{{item}}
+				<!--<span class="badge badge-assertive">?</span>-->
+				<ion-option-button class="button-calm" ng-click="cal(item)">答案</ion-option-button>
+				<ion-delete-button class="ion-minus-circled" ng-click="delete_item(item)"></ion-delete-button>
+				<ion-reorder-button class="ion-navicon" on-reorder="move_item(item,$fromIndex,$toIndex)"></ion-reorder-button>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

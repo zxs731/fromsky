@@ -1,0 +1,33 @@
+<ion-view view-title="Setting">
+  <ion-content>
+    <ion-list>
+   <!-- <ion-toggle  ng-model="settings.enableFriends">
+        1Enable Friends
+    </ion-toggle>-->
+    <div class="item item-divider">运算类型：四则</div>
+    <ion-checkbox  ng-repeat="item in Parameter.operators" ng-model="item.selected">
+				<b>{{item.label}}</b> (表示{{item.des}})
+			</ion-checkbox>
+    </ion-list>
+    <div class="item item-divider">数字位数：</div>
+    <ion-checkbox ng-repeat="item in Parameter.numberFormate" 
+					   ng-model="item.selected">
+				{{item.label}}
+			</ion-checkbox>
+    <div class="item range range-positive">
+           <label>题数</label>
+           <input type="range" name="volume" min="1" max="50" ng-model="Parameter.count">
+           <label>{{Parameter.count}}</label>
+    </div>
+    <div class="item item-divider">运算 {{Parameter.numbers}} 次</div>
+      <ion-radio ng-repeat="item in [2,3,4,5]" 
+             ng-model="Parameter.numbers" ng-value="item">
+        {{item}}
+      </ion-radio>
+    <div class="item item-divider">运算精度： 保留{{Parameter.numberOfDecimal}}位</div>
+      <ion-radio ng-repeat="item in [0,1,2]" 
+             ng-model="Parameter.numberOfDecimal" ng-value="item">
+        {{item}}
+      </ion-radio>
+  </ion-content>
+</ion-view>
