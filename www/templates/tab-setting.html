@@ -1,4 +1,7 @@
 <ion-view view-title="Setting">
+<ion-header-bar class="bar-positive">
+    <h1 class="title">设置</h1>
+   </ion-header-bar>
   <ion-content>
     <ion-list>
    <!-- <ion-toggle  ng-model="settings.enableFriends">
@@ -19,15 +22,19 @@
            <input type="range" name="volume" min="1" max="50" ng-model="Parameter.count">
            <label>{{Parameter.count}}</label>
     </div>
+    <div class="list">
     <div class="item item-divider">运算 {{Parameter.numbers}} 次</div>
-      <ion-radio ng-repeat="item in [2,3,4,5]" 
-             ng-model="Parameter.numbers" ng-value="item">
-        {{item}}
+      <ion-radio ng-repeat="item1 in [2,3,4,5]" 
+             ng-model="Parameter.numbers" ng-value="item1" name="numbers">
+        {{item1}}
       </ion-radio>
+    </div>
+    <div class="list">
     <div class="item item-divider">运算精度： 保留{{Parameter.numberOfDecimal}}位</div>
-      <ion-radio ng-repeat="item in [0,1,2]" 
-             ng-model="Parameter.numberOfDecimal" ng-value="item">
-        {{item}}
+      <ion-radio ng-repeat="item2 in [0,1,2]" 
+             ng-model="Parameter.numberOfDecimal" ng-value="item2" name="numberOfDecimal">
+        {{item2}}
       </ion-radio>
+    </div>
   </ion-content>
 </ion-view>
